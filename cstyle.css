@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    text-align: center;
+    margin-top: 190px;
+    font-size: 30px;
+}
+#start{
+    height: 30px;
+    width: 70px;
+}
+#stop{
+    height: 30px;
+    width: 70px;
+}

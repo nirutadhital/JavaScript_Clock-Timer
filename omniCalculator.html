@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="omnistyle.css">
+<script src="onmicalscript.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return check()">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        <button type="button" onclick="check()">Calculate</button>
+        <br><br>
+        <div id="result"></div>
+    <!-- <label for="input">Date of Birth:</label>
+    <select id="dob" >
+        <option value="">-year-</option>
+        <script>yearlist()</script>
+    </select>
+    <select id="dob" >
+        <option value="">-month-</option>
+        <script>monthlist()</script>
+    </select>
+    <select id="dob" >
+        <option value="">-day-</option>
+        <script>daylist()</script>
+    </select> -->
+    <!-- <br><br><br>
+
+    <button id="calculate" onclick="check()">Calculate</button><br><br> -->
+    <!-- <div class="result"></div> -->
+</form>
+</body>
+</html>

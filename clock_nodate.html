@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="cstyle.css">
+     <script>
+         var sec=0;
+         var min=0;
+         var hr=0;
+         let tpass=null;
+         function start()
+         {
+            sec++;
+            if(sec==60)
+            {
+                min++;
+                sec=0;
+            }
+            if(min==60)
+            {
+                hr++;
+                min=0;
+            }
+            document.getElementById("sthr").innerHTML=hr;
+            document.getElementById("stmin").innerHTML=min;
+            document.getElementById("stsec").innerHTML=sec;
+         }
+         function tstore()//time lai store garni
+         {
+            tpass=setInterval(start,1000);//chalirako time store gardai jani
+         }
+         function stop()
+         {
+            clearInterval(tpass);//chalirako interval clear garni
+            tpass=null;//watch chalna xodxa
+         }
+         
+    </script>
+</head>
+
+<body onLoad="setInterval(myClock,1000)">
+    stop watch:<br><br>
+    <label id="sthr">00</label>:<label id="stmin">00</label>:<label id="stsec">00</label>
+    <br><br>
+    <button id="start" onClick="tstore()">Start</button>
+    <button id="stop" onClick="stop()">Stop</button>
+</body>
+</html>

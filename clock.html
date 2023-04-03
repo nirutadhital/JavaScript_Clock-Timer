@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="cstyle.css">
+     <script>
+         var sec=0;
+         var min=0;
+         let tpass=null;
+         function start()
+         {
+            sec++;
+            if(sec==60)
+            {
+                min++;
+                sec=0;
+            }
+            document.getElementById("stmin").innerHTML=min;
+            document.getElementById("stsec").innerHTML=sec;
+        }
+         function tstore()
+         {
+            tpass=setInterval(start,100);
+         }
+         function stop()
+         {
+            clearInterval(tpass);
+            tpass=null;
+         }
+         function myClock()
+         {
+            let date = new Date();
+             let hours=date.getHours();
+             let minutes=date.getMinutes();
+             let seconds=date.getSeconds();
+             let ampm="";
+             
+             if(hours>=12) 
+             {
+                 ampm="PM";
+                 hours=hours-12;
+             }
+             else
+                 ampm="AM";
+             document.getElementById("hr").innerHTML=hours;
+             document.getElementById("min").innerHTML=minutes;
+             document.getElementById("sec").innerHTML=seconds;
+             document.getElementById("ampm").innerHTML=ampm;
+         }
+         
+    </script>
+</head>
+
+<body onLoad="setInterval(myClock,100)">
+    Current Time is<br>
+    <label id='hr'>00</label>:
+    <label id='min'>00</label>:
+    <label id='sec'>00</label>&nbsp;&nbsp;
+    <label id='ampm'>AM</label>
+    <br><br><br>
+    <label id="stmin">00</label>:<label id="stsec">00</label>
+    <br><br>
+    <button id="start" onClick="tstore()">Start</button>
+    <button id="stop" onClick="stop()">Stop</button>
+</body>
+</html>
